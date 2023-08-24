@@ -1,0 +1,94 @@
+
+
+
+body {
+  background-color: #000;
+  font-family: 'Orbitron', sans-serif;
+}
+p, label {
+  font-family: 'Jura', sans-serif;
+}
+a {
+  font-family: 'Jura', sans-serif;
+  color:  orange;
+  text-decoration: none;
+}
+a:hover {
+  color: whitesmoke;
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+
+
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+
+}
+
+h1 {
+  font-family: 'Jura', sans-serif;
+  color: whitesmoke;
+}
+
+
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  font-family: 'Jura', sans-serif;
+  width: 150px;
+  font-size: 11px;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  background: #e30b5d;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+
+#divider {
+  padding-left: 50px;
+  width: 400px;
+}
+
+input {
+  font-family: 'Jura', sans-serif;
+}
+audiocontrols{
+  display: flex;
+  position: absolute;
+  left: 200px;
+  width: 50px;
+  padding: 20px;
+  margin: 200px;
+}
+audio {
+  margin: 20px;
+}
+
+#audio {
+  visibility: hidden;
+  height: 0px;
+}
