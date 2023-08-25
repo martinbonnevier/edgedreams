@@ -1,22 +1,4 @@
 // The music player is made by Hector Polanco: https://github.com/hecpolanco/Simple-Music-Player
-
-const background = document.querySelector('#background'); // background derived from album cover below
-const thumbnail = document.querySelector('#thumbnail'); // album cover 
-const song = document.querySelector('#song'); // audio object
-
-const songArtist = document.querySelector('.song-artist'); // element where track artist appears
-const songTitle = document.querySelector('.song-title'); // element where track title appears
-const progressBar = document.querySelector('#progress-bar'); // element where progress bar appears
-let pPause = document.querySelector('#play-pause'); // element where play and pause image appears
-
-songIndex = 0;
-songs = ['./assets/player_assets/music/eyno.mp3', './assets/player_assets/music/lynglyng_final.mp3','./assets/player_assets/music/ickmon.mp3', './assets/player_assets/music/gajd.mp3', './assets/player_assets/music/Tansky.mp3', './assets/player_assets/music/cmon.mp3']; // object storing paths for audio objects
-thumbnails = ['./assets/player_assets/images/1.png', './assets/player_assets/images/6.png', './assets/player_assets/images/2.png', './assets/player_assets/images/3.png', './assets/player_assets/images/4.png', './assets/player_assets/images/5.png']; // object storing paths for album covers and backgrounds
-songArtists = ['Martin Bonnevier', 'Martin Bonnevier', 'Martin Bonnevier', 'Martin Bonnevier', 'Martin Bonnevier', 'Martin Bonnevier']; // object storing track artists
-songTitles = ["01. eyno", "02. lynglyng","03. ickmon", "04. gajd", "05. tansky", "06. cmon"]; // object storing track titles
-
-// function where pp (play-pause) element changes based on playing boolean value - if play button clicked, change pp.src to pause button and call song.play() and vice versa.
-let playing = true;
 function playPause() {
     if (playing) {
         const song = document.querySelector('#song'),
@@ -36,12 +18,7 @@ function playPause() {
     }
 }
 
-// automatically play the next song at the end of the audio object's duration
-song.addEventListener('ended', function(){
-    nextSong();
-});
 
-// function where songIndex is incremented, song/thumbnail image/background image/song artist/song title changes to next index value, and playPause() runs to play next track 
 function nextSong() {
     songIndex++;
     if (songIndex > 5) {
@@ -58,7 +35,7 @@ function nextSong() {
     playPause();
 }
 
-// function where songIndex is decremented, song/thumbnail image/background image/song artist/song title changes to previous index value, and playPause() runs to play previous track 
+
 function previousSong() {
     songIndex--;
     if (songIndex < 0) {
@@ -75,7 +52,7 @@ function previousSong() {
     playPause();
 }
 
-// update progressBar.max to song object's duration, same for progressBar.value, update currentTime/duration DOM
+
 function updateProgressValue() {
     progressBar.max = song.duration;
     progressBar.value = song.currentTime;
@@ -104,3 +81,41 @@ setInterval(updateProgressValue, 500);
 function changeProgressBar() {
     song.currentTime = progressBar.value;
 };
+
+
+console.log("Fläsk!")
+
+const background = document.querySelector('#background'); // background derived from album cover below
+const thumbnail = document.querySelector('#thumbnail'); // album cover 
+const song = document.querySelector('#song'); // audio object
+
+const songArtist = document.querySelector('.song-artist'); // element where track artist appears
+const songTitle = document.querySelector('.song-title'); // element where track title appears
+const progressBar = document.querySelector('#progress-bar'); // element where progress bar appears
+let pPause = document.querySelector('#play-pause'); // element where play and pause image appears
+
+songIndex = 0;
+songs = ['./assets/player_assets/music/eyno.mp3', './assets/player_assets/music/lynglyng_final.mp3','./assets/player_assets/music/ickmon.mp3', './assets/player_assets/music/gajd.mp3', './assets/player_assets/music/Tansky.mp3', './assets/player_assets/music/cmon.mp3']; // object storing paths for audio objects
+thumbnails = ['./assets/player_assets/images/1.png', './assets/player_assets/images/6.png', './assets/player_assets/images/2.png', './assets/player_assets/images/3.png', './assets/player_assets/images/4.png', './assets/player_assets/images/5.png']; // object storing paths for album covers and backgrounds
+songArtists = ['Martin Bonnevier', 'Martin Bonnevier', 'Martin Bonnevier', 'Martin Bonnevier', 'Martin Bonnevier', 'Martin Bonnevier']; // object storing track artists
+songTitles = ["01. eyno", "02. lynglyng","03. ickmon", "04. gajd", "05. tansky", "06. cmon"]; // object storing track titles
+
+// function where pp (play-pause) element changes based on playing boolean value - if play button clicked, change pp.src to pause button and call song.play() and vice versa.
+let playing = true;
+
+
+// automatically play the next song at the end of the audio object's duration
+song.addEventListener('ended', function(){
+    nextSong();
+});
+
+// function where songIndex is incremented, song/thumbnail image/background image/song artist/song title changes to next index value, and playPause() runs to play next track 
+
+
+// function where songIndex is decremented, song/thumbnail image/background image/song artist/song title changes to previous index value, and playPause() runs to play previous track 
+
+
+// update progressBar.max to song object's duration, same for progressBar.value, update currentTime/duration DOM
+
+
+
