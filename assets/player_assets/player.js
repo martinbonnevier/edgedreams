@@ -10,8 +10,8 @@ const progressBar = document.querySelector('#progress-bar'); // element where pr
 let pPause = document.querySelector('#play-pause'); // element where play and pause image appears
 
 songIndex = 0;
-songs = ['/assets/player_assets/music/eyno.mp3', '/assets/player_assets/music/lynglyng_final.mp3','/assets/player_assets/music/ickmon.mp3', '/assets/player_assets/music/gajd.mp3', '/assets/player_assets/music/Tansky.mp3', '/assets/player_assets/music/cmon.mp3']; // object storing paths for audio objects
-thumbnails = ['/assets/player_assets/images/1.png', '/assets/player_assets/images/6.png', '/assets/player_assets/images/2.png', '/assets/player_assets/images/3.png', '/assets/player_assets/images/4.png', '/assets/player_assets/images/5.png']; // object storing paths for album covers and backgrounds
+songs = ['./assets/player_assets/music/eyno.mp3', './assets/player_assets/music/lynglyng_final.mp3','./assets/player_assets/music/ickmon.mp3', './assets/player_assets/music/gajd.mp3', './assets/player_assets/music/Tansky.mp3', './assets/player_assets/music/cmon.mp3']; // object storing paths for audio objects
+thumbnails = ['./assets/player_assets/images/1.png', './assets/player_assets/images/6.png', './assets/player_assets/images/2.png', './assets/player_assets/images/3.png', './assets/player_assets/images/4.png', './assets/player_assets/images/5.png']; // object storing paths for album covers and backgrounds
 songArtists = ['Martin Bonnevier', 'Martin Bonnevier', 'Martin Bonnevier', 'Martin Bonnevier', 'Martin Bonnevier', 'Martin Bonnevier']; // object storing track artists
 songTitles = ["01. eyno", "02. lynglyng","03. ickmon", "04. gajd", "05. tansky", "06. cmon"]; // object storing track titles
 
@@ -22,13 +22,13 @@ function playPause() {
         const song = document.querySelector('#song'),
         thumbnail = document.querySelector('#thumbnail');
 
-        pPause.src = "/assets/player_assets/icons/pause.png"
+        pPause.src = "./assets/player_assets/icons/pause.png"
         thumbnail.style.transform = "scale(1.15)";
         
         song.play();
         playing = false;
     } else {
-        pPause.src = "/assets/player_assets/icons/play.png"
+        pPause.src = "./assets/player_assets/icons/play.png"
         thumbnail.style.transform = "scale(1)"
         
         song.pause();
